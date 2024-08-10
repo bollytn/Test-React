@@ -44,7 +44,6 @@ class App extends Component {
           {this.state.todos.map((todo,index) => <Task todo={todo} index={index} key={index} completeTask={() => {this.completeTask(index)}} />)}
 
         <CreateTask value={this.state.newTask} updateNewTask={this.updateNewTask} addTask={this.addTask}/>
-
         </div>
       );
     }
