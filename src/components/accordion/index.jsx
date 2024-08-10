@@ -5,12 +5,12 @@ export default function Accordion() {
 
     const [selected, setSelected] = useState(null);
 
-    function handleSingelSelection(getCurrentId) {
+    const handleSingelSelection = (getCurrentId) =>
         setSelected(getCurrentId === selected ? null : getCurrentId);
-    }
-    
+
+
     console.log(selected);
-    
+
     return <div className="wrapper">Accordion
         <div className="accordion">
             {
