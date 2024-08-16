@@ -1,11 +1,10 @@
-import Accordion from "./components/accordion";
 import './App.css';
+import Context from "./components/Context/Context";
 
 function App () {
   return (
     <div className="App">
-      <Accordion/>
-
+      <Context/>
     </div>
   );
 }
