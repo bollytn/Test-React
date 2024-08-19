@@ -43,13 +43,13 @@ input {
     border-radius: 4px;
 }
 
-input[type="checkbox"] {
+input[type=checkbox] {
     height: 20px;
     border-radius: 4px;
     transition: .5s;
 }
 
-input[type="submit"] {
+input[type=submit] {
     background-color: beige;
     margin-top: 15px;
     width: fit-content;
@@ -59,9 +59,14 @@ input[type="submit"] {
     transition: .5s;
 }
 
-input[type="submit"]:hover {
+input[type=submit]:hover:not(input[type=submit]:disabled) {
     background-color: rgb(155 124 66 / 40%);
     color: beige;
+}
+
+input[type=submit]:disabled {
+    cursor: default;
+    color: black;
 }
 
 select {
