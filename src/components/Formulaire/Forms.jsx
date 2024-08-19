@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { IconListCheck } from '@tabler/icons-react';
 import Modal from './Modal'
 import './style.css'
 export default function Forms() {
-    const [loadinput, setLoadinput] = useState({
+    const [showModal, setShowModal] = useState(false)
+    const [formData, setFormData] = useState({
         nom: "",
         prenom: "",
         email: "",
@@ -10,48 +12,61 @@ export default function Forms() {
         salaire: "",
     })
 
+    const handleInputChange = (field, value) => {
+        setFormData({ ...formData, [field]: value })
+    }
+
+
     function handleSubmit(e) {
-        e.preventDefault()
-        console.log('submit succes');
+        e.preventDefault();
+        setShowModal(true)
+    }
+
+    function handleExitClick() {
+        if (showModal) {
+            setShowModal(false)
+        }
     }
 
     const btnIsDisabled =
-        loadinput.nom === ''
-        || loadinput.prenom === ''
-        || loadinput.email === ''
+        formData.nom === ''
+        || formData.prenom === ''
+        || formData.email === ''
 
     return (
-        <div className='grp'>
+        <div className='grp' onClick={handleExitClick}>
             <form id='form'>
-                <h1 className='titre-form'>Formulaire</h1>
+                <div className='titre'>
+                    <h1>Formulaire</h1>
+                    <IconListCheck stroke={2} />
+                </div>
                 <hr />
                 <label >Nom:</label>
-                <input type="text" value={loadinput.nom} onChange={(e) => {
-                    setLoadinput({ ...loadinput, nom: e.target.value })
-                }} required />
+                <input type="text" value={formData.nom} onChange={(e) =>
+                    handleInputChange('nom', e.target.value)
+                } required />
                 <label >Prénom:</label>
-                <input type="text" value={loadinput.prenom} onChange={(e) => {
-                    setLoadinput({ ...loadinput, prenom: e.target.value })
-                }} required />
+                <input type="text" value={formData.prenom} onChange={(e) =>
+                    handleInputChange('prenom', e.target.value)
+                } required />
                 <label >Email:</label>
-                <input type="email" required value={loadinput.email} onChange={(e) => {
-                    setLoadinput({ ...loadinput, email: e.target.value })
-                }} />
+                <input type="email" required value={formData.email} onChange={(e) =>
+                    handleInputChange('email', e.target.value)
+                } />
                 <label >Vous etes employer ?</label>
-                <input type="checkbox" value={loadinput.isEmployer} onChange={(e) => {
-                    setLoadinput({ ...loadinput, isEmployer: e.target.checked })
-                }} />
+                <input type="checkbox" value={formData.isEmployer} onChange={(e) =>
+                    handleInputChange('isEmloyer', e.target.value)
+                } />
                 <label>Salaire :</label>
-                <select value={loadinput.salaire} onChange={(e) => {
-                    setLoadinput({ ...loadinput, salaire: e.target.value })
-                }}>
+                <select value={formData.salaire} onChange={(e) =>
+                    handleInputChange('salaire', e.target.value)
+                }>
                     <option value="1000">1000Dt</option>
                     <option value="2000">2000Dt</option>
                 </select>
                 <input type="submit" value="Envoyer" disabled={btnIsDisabled} onClick={handleSubmit} />
-
             </form>
-            {/* <Modal /> */}
+            <Modal isVisible={showModal} />
         </div>
     )
 }

@@ -28,8 +28,16 @@ form {
     text-align: center;
 }
 
-.titre-form {
+.titre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     margin-bottom: 10px;
+}
+
+.titre h1 {
+    margin-bottom: 5px;
 }
 
 hr {
@@ -73,6 +81,7 @@ input[type=submit]:disabled {
 
 select {
     height: 30px;
+    text-align: center;
 }
 
 .modal {
@@ -90,8 +99,4 @@ select {
     box-shadow: inset 0px 0px 0px 0px;
     padding: 10px 20px;
     border-radius: 5px;
-}
-
-.titre {
-    text-align: center;
 }
