@@ -18,7 +18,8 @@ export default function Forms() {
                     <option value="">1000Dt</option>
                     <option value="">2000Dt</option>
                 </select>
-                <input type="submit" />
+                <input type="submit" id='submit' value="Envoyer" />
+
             </form>
         </div>
     )
