@@ -1,10 +1,10 @@
 import './App.css';
-import Context from "./components/Context/Context";
+import Forms from './components/Formulaire/Forms';
 
-function App () {
+function App() {
   return (
     <div className="App">
-      <Context/>
+      <Forms />
     </div>
   );
 }
