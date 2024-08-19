@@ -1,9 +1,10 @@
+import Modal from './Modal'
 import './style.css'
 export default function Forms() {
     return (
         <div className='grp'>
             <form id='form'>
-                <h1>Formulaire</h1>
+                <h1 className='titre-form'>Formulaire</h1>
                 <hr />
                 <label for="nom">Nom:</label>
                 <input type="text" id="nom" name="nom" required />
@@ -21,6 +22,7 @@ export default function Forms() {
                 <input type="submit" id='submit' value="Envoyer" />
 
             </form>
+            <Modal />
         </div>
     )
 }

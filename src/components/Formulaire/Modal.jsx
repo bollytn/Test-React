@@ -1,5 +1,9 @@
 export default function Modal() {
     return (
-        <h1>formulaire envoyer par succes</h1>
+        <div className="modal">
+            <div className="modal-content">
+                <h1 className="titre">formulaire envoyer par succes</h1>
+            </div>
+        </div>
     )
 }
