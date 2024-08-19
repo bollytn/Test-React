@@ -2,7 +2,7 @@ import './style.css'
 export default function Forms() {
     return (
         <div className='grp'>
-            <form>
+            <form id='form'>
                 <h1>Formulaire</h1>
                 <hr />
                 <label for="nom">Nom:</label>

@@ -1,4 +1,3 @@
-import './App.css';
 import Forms from './components/Formulaire/Forms';
 
 function App() {
