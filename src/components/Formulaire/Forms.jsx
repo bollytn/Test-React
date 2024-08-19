@@ -13,8 +13,12 @@ export default function Forms() {
     function handleSubmit(e) {
         e.preventDefault()
         console.log('submit succes');
-
     }
+
+    const btnIsDisabled =
+        loadinput.nom === ''
+        || loadinput.prenom === ''
+        || loadinput.email === ''
 
     return (
         <div className='grp'>
@@ -44,8 +48,7 @@ export default function Forms() {
                     <option value="1000">1000Dt</option>
                     <option value="2000">2000Dt</option>
                 </select>
-                <input type="submit" value="Envoyer" disabled={
-                    loadinput.nom === '' || loadinput.prenom === '' || loadinput.email === ''} onClick={handleSubmit} />
+                <input type="submit" value="Envoyer" disabled={btnIsDisabled} onClick={handleSubmit} />
 
             </form>
             {/* <Modal /> */}

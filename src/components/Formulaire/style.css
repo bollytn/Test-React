@@ -67,6 +67,8 @@ input[type=submit]:hover:not(input[type=submit]:disabled) {
 input[type=submit]:disabled {
     cursor: default;
     color: black;
+    background-color: rgba(192, 187, 118, -0.6);
+    text-decoration: line-through;
 }
 
 select {
