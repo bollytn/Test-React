@@ -3,6 +3,7 @@ import { IconListCheck } from '@tabler/icons-react';
 import Modal from './Modal'
 import './style.css'
 export default function Forms() {
+    const [errorMsg, setErrorMsg] = useState(null)
     const [showModal, setShowModal] = useState(false)
     const [formData, setFormData] = useState({
         nom: "",
@@ -19,6 +20,11 @@ export default function Forms() {
 
     function handleSubmit(e) {
         e.preventDefault();
+        if (formData.nom === "bilel") {
+            setErrorMsg("the name is false")
+        } else {
+            setErrorMsg(null)
+        }
         setShowModal(true)
     }
 
@@ -66,7 +72,7 @@ export default function Forms() {
                 </select>
                 <input type="submit" value="Envoyer" disabled={btnIsDisabled} onClick={handleSubmit} />
             </form>
-            <Modal isVisible={showModal} />
+            <Modal isVisible={showModal} errorMsg={errorMsg} />
         </div>
     )
 }

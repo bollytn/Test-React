@@ -100,3 +100,9 @@ select {
     padding: 10px 20px;
     border-radius: 5px;
 }
+.modalMsg {
+    color: green;
+}
+.modalMsg.err {
+    color: red;
+}
