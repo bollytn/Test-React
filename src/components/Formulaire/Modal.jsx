@@ -1,4 +1,4 @@
-export default function Modal({ isVisible,errorMsg }) {
+export default function Modal({ isVisible, errorMsg }) {
     if (isVisible) {
         return (
             <div className="modal">
