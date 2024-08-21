@@ -1,5 +1,6 @@
 import './header.css'
 import logo from './logo.png'
+import NavItem, { NavItemDropDown } from '../NavItems/NavItem'
 export default function Heeader() {
     return (
         <div>

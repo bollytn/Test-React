@@ -1,0 +1,30 @@
+.hero-main {
+    background: url('../imgs/banner-bg.jpg') no-repeat top right /cover;
+    border-radius: 25px;
+    background-color: #27292a;
+    color: white;
+    padding: 58px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-title {
+    font-size: 60px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-weight: 900;
+}
+
+.hero-title em {
+    color: #ec6090;
+    font-style: normal;
+}
+
+.hero-subtitle {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 25px;
+    font-size: 20px;
+}

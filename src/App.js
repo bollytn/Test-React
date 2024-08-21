@@ -1,14 +1,14 @@
-
-import { Header, Container, Footer } from "./components/Portfolio/index";
+import { Header, Boddy, Footer, Hero } from "./components/Portfolio/index";
 
 const App = () => {
   return (
     <>
       <Header />
-      <Container />
+      <Boddy>
+      </Boddy>
       <Footer />
     </>
-  );
+  )
 }
 
 export default App
