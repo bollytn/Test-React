@@ -1,4 +1,4 @@
-import Forms from './components/Formulaire/Forms';
+import Forms from './components/Forms';
 
 function App() {
   return (
