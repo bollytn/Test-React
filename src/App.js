@@ -1,11 +1,18 @@
-import Context from './components/Context/Context';
+import Boddy from "./components/Portfolio/Boddy";
+import Foooter from "./components/Portfolio/Foooter";
+import Heeder from "./components/Portfolio/Heeder";
 
-function App() {
+// import { Container,Footer } from "./components/Portfolio";
+
+
+const App = () => {
   return (
-    <div className="App">
-      <Context />
-    </div>
+    <>
+    <Heeder/>
+    <Boddy  />
+    <Foooter/>
+    </>
   );
 }
 
-export default App;  
+export default App
