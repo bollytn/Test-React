@@ -1,9 +1,9 @@
-import Forms from './components/Formulaire/Forms';
+import Context from './components/Context/Context';
 
 function App() {
   return (
     <div className="App">
-      <Forms />
+      <Context />
     </div>
   );
 }
