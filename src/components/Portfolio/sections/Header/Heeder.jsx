@@ -1,10 +1,10 @@
 import './header.css'
 import logo from './logo.png'
-import NavItem, { NavItemDropDown } from '../NavItems/NavItem'
+// import NavItem, { NavItemDropDown } from '../NavItems/NavItem'
 export default function Heeader() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-header">
+            <nav className="navbar navbar-expand-lg navbar-dark cyborg-navbar">
                 <div className="container-fluid">
                     <a className="navbar-brand">
                         <img src={logo} className='logo' alt="logo" />

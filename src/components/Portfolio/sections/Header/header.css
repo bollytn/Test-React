@@ -1,0 +1,23 @@
+.bg-header {
+    background-color: var(--color-dar) !important;
+}
+
+.cyborg-navbar {
+    min-height: 100px;
+}
+
+.logo {
+    max-width: 70px;
+}
+
+.nav-link {
+    color: var(--color-light);
+}
+
+.nav-link.active {
+    color: red;
+}
+
+.nav-link.disabled {
+    color: var(--color-primary);
+}

@@ -1,11 +1,11 @@
-import { Header, Boddy, Footer } from "./components/Portfolio/index";
+
+import { Header, Container, Footer } from "./components/Portfolio/sections/index";
 
 const App = () => {
   return (
     <>
       <Header />
-      <Boddy>
-      </Boddy>
+      <Container />
       <Footer />
     </>
   )
