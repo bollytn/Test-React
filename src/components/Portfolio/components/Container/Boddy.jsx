@@ -1,5 +1,5 @@
 import './container.css'
-import Hero from "../Hero/Hero";
+import Hero from "../../sections/Hero/Hero";
 
 export default function Boddy(props) {
     return (

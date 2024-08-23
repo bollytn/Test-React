@@ -1,5 +1,6 @@
 
-import { Header, Container, Footer } from "./components/Portfolio/sections/index";
+import { Container } from "./components/Portfolio/components/index"
+import { Header, Footer } from "./components/Portfolio/sections/index";
 
 const App = () => {
   return (
