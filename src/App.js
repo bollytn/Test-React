@@ -1,4 +1,4 @@
-import { Header, Boddy, Footer, Hero } from "./components/Portfolio/index";
+import { Header, Boddy, Footer } from "./components/Portfolio/index";
 
 const App = () => {
   return (
