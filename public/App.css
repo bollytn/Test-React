@@ -1,0 +1,28 @@
+:root {
+    --color-dark: #27292a;
+    --color-darkest: #1f2122;
+    --color-light: #fff;
+    --color-primary: #ec6090;
+
+    --color-bg-body: var(--color-darkest);
+
+    --distance-primary: 50px;
+    --padding-primary: var(--distance-primary);
+    --margin-primary: var(--distance-primary);
+    --border-radius-primary: calc(var(--distance-primary) /2);
+
+    --font-weigth-bold: 900;
+    --font-weigth-normal: 400;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    background-color: var(--color-bg-body);
+}

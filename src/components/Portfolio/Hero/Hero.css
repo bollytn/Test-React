@@ -1,9 +1,9 @@
 .hero-main {
     background: url('../imgs/banner-bg.jpg') no-repeat top right /cover;
-    border-radius: 25px;
-    background-color: #27292a;
-    color: white;
-    padding: 58px;
+    border-radius: var(--border-radius-primary);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: var(--padding-primary);
 }
 
 .hero-text {
@@ -13,8 +13,8 @@
 .hero-title {
     font-size: 60px;
     text-transform: uppercase;
-    margin-bottom: 25px;
-    font-weight: 900;
+    margin-bottom: calc(var(--margin-primary)/2);
+    font-weight: var(--font-weigth-bold)
 }
 
 .hero-title em {
@@ -24,7 +24,7 @@
 
 .hero-subtitle {
     color: white;
-    font-weight: 400;
-    margin-bottom: 25px;
+    font-weight: var(--font-weigth-normal);
+    margin-bottom: calc(var(--margin-primary)/2);
     font-size: 20px;
 }

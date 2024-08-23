@@ -1,5 +1,5 @@
 .bg-header {
-    background-color: rgb(197 197 135) !important;
+    background-color: var(--color-dark) !important;
 }
 
 .logo {
