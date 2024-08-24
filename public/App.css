@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;900&display=swap');
 :root {
     --color-dark: #27292a;
     --color-darkest: #1f2122;
@@ -23,7 +24,6 @@
     outline: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;900&display=swap');
 
 body {
     background-color: var(--color-bg-body);

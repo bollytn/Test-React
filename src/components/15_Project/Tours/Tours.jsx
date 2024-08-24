@@ -8,6 +8,11 @@ export default function Tours() {
     const [loading, setLoading] = useState()
     const [tours, setTours] = useState([])
 
+    const removeTour = (id) => {
+        const newTours = tours.filter((tour) => tour.id != id)
+        setTours(newTours)
+    }
+
     const fetchTours = async () => {
         setLoading(true);
         try {
@@ -36,7 +41,7 @@ export default function Tours() {
     }
     return (
         <main>
-            <Tour tours={tours}/>
+            <Tour tours={tours} removeTour={removeTour}/>
         </main>
     )
 }

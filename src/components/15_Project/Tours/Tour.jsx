@@ -1,6 +1,6 @@
 import Tour_item from "./Tour_item"
 
-export default function Tour({tours}) {
+export default function Tour({tours, removeTour}) {
     return (
         <section>
             <div className="title">
@@ -9,7 +9,7 @@ export default function Tour({tours}) {
             </div>
             <div>
                 {tours.map((tour) => {
-                    return <Tour_item key={tour.id} {...tour}/>
+                    return <Tour_item key={tour.id} {...tour} removeTour={removeTour}/>
                 })}
             </div>
         </section>
