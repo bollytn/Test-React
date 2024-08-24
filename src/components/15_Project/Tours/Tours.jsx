@@ -21,7 +21,7 @@ export default function Tours() {
             setLoading(false);
             setTours(tours);
             console.log(tours);
-            
+
         } catch (error) {
             setLoading(false);
             console.log(error);
@@ -39,9 +39,19 @@ export default function Tours() {
             </main>
         )
     }
+    if (tours.length === 0) {
+        return (
+            <main>
+                <div className="title">
+                    <h2>no tours left</h2>
+                    <button className='btn' onClick={fetchTours}>refresh</button>
+                </div>
+            </main>
+        )
+    }
     return (
         <main>
-            <Tour tours={tours} removeTour={removeTour}/>
+            <Tour tours={tours} removeTour={removeTour} />
         </main>
     )
 }
