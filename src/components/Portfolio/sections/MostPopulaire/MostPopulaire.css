@@ -1,0 +1,44 @@
+.section-wrapper {
+    background-color: var(--color-darkest);
+    border-radius: var(--border-radius-primary);
+    padding: var(--padding-primary);
+    margin-top: var(--margin-primary);
+}
+
+.section-header h4 {
+    font-size: 36px;
+    font-weight: var(--font-weigth-bold);
+}
+
+.most-populaire-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.most-populaire-item {
+    flex: 1;
+}
+
+.card-wrapper {
+    background-color: var(--color-dark);
+    border-radius: calc(var(--border-radius-primary)/2);
+    padding: calc(var(--padding-primary)/4);
+    margin: calc(var(--margin-primary)/5);
+}
+
+.most-populaire-item-img {
+    width: 100%;
+    border-radius: calc(var(--border-radius-primary)/2);
+    padding: calc(var(--padding-primary)/4);
+
+}
+
+.most-populaire-item-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.most-populaire-item-title {
+    font-size: 14px;
+}

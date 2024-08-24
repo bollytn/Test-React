@@ -29,3 +29,11 @@ body {
     background-color: var(--color-bg-body);
     font-family: "Poppins", sans-serif;
 }
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
