@@ -36,7 +36,7 @@ export default function Tours() {
     }
     return (
         <main>
-            <Tour />
+            <Tour tours={tours}/>
         </main>
     )
 }
