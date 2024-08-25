@@ -6,7 +6,7 @@ export default function Review() {
     const [index, setIndex] = useState(0)
     const { name, job, image, text } = people[index]
 
-    const checkData = (index) => {
+    const checkIndex = (index) => {
         if (index > people.length - 1) {
             return 0
         } if (index === -1) {
@@ -17,14 +17,14 @@ export default function Review() {
     const prevPerson = () => {
         setIndex((index) => {
             let i = index - 1
-            return checkData(i)
+            return checkIndex(i)
         });
     }
 
     const nextPerson = () => {
         setIndex((index) => {
             let i = index + 1
-            return checkData(i)
+            return checkIndex(i)
         });
     }
 
