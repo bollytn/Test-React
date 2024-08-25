@@ -2,14 +2,14 @@
 // import { Container } from "./components/Portfolio/components/index"
 // import { Header, Footer, Hero, MostPopulaire } from "./components/Portfolio/sections/index";
 
-import Reviews from "./components/15_Project/Reviews/Reviews"
+import Accordion from "./components/15_Project/Accordion/Accordion"
 
 
 
 const App = () => {
   return (
     <>
-      <Reviews/>
+      <Accordion/>
     </>
   )
 }
