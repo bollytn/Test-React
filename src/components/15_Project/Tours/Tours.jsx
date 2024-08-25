@@ -9,7 +9,7 @@ export default function Tours() {
     const [tours, setTours] = useState([])
 
     const removeTour = (id) => {
-        const newTours = tours.filter((tour) => tour.id != id)
+        const newTours = tours.filter((tour) => tour.id !== id)
         setTours(newTours)
     }
 
