@@ -6,12 +6,12 @@ export default function Review() {
     const [index, setIndex] = useState(0)
     const { name, job, image, text } = people[index]
 
-    const checkData = (i) => {
-        if (i > people.length - 1) {
+    const checkData = (index) => {
+        if (index > people.length - 1) {
             return 0
-        } else if (i === -1) {
+        } if (index === -1) {
             return people.length - 1
-        } else return i
+        } return index
     }
 
     const prevPerson = () => {
@@ -29,8 +29,8 @@ export default function Review() {
     }
 
     const randomPerson = () => {
-        setIndex(Math.floor(Math.random()*(people.length)))
-    } 
+        setIndex(Math.floor(Math.random() * (people.length)))
+    }
 
     return (
         <article className='review'>
