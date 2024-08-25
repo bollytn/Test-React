@@ -6,12 +6,12 @@ export default function Review() {
     const [index, setIndex] = useState(0)
     const { name, job, image, text } = people[index]
 
-    const checkIndex = (index) => {
-        if (index > people.length - 1) {
+    const checkIndex = (i) => {
+        if (i > people.length - 1) {
             return 0
-        } if (index === -1) {
+        } if (i === -1) {
             return people.length - 1
-        } return index
+        } return i
     }
 
     const prevPerson = () => {
@@ -29,7 +29,11 @@ export default function Review() {
     }
 
     const randomPerson = () => {
-        setIndex(Math.floor(Math.random() * (people.length)))
+        let randomNumber = Math.floor(Math.random() * (people.length))
+        if (randomNumber === index) {
+            randomNumber = index + 1
+        }
+        setIndex(checkIndex(randomNumber))
     }
 
     return (
