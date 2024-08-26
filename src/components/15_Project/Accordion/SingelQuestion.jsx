@@ -1,24 +1,17 @@
-import { useState } from "react"
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai"
 
-export default function SingelQuestion({ data }) {
-    const [questions, setQuestions] = useState(data)
-    const [showInfo, setShowInfo] = useState(false)
-
-    const showHide = () => {
-        setShowInfo(!showInfo)
+export default function SingelQuestion({ id, title, info, curOpen, setCurOpen }) {
+    const isOpen = curOpen === id;
+    const handleToggle = () => {
+        setCurOpen(isOpen ? null : id)
     }
     return (
-        <>
-            {questions.map((question,index) => (
-                <article className="question" key={index}>
-                    <header>
-                        <h4>{question.title}</h4>
-                        <button className="btn" onClick={showHide}>{showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}</button>
-                    </header>
-                    {showInfo && <p>{question.info}</p>}
-                </article>
-            ))}
-        </>
+        <article className="question">
+            <header>
+                <h4>{title}</h4>
+                <button className="btn" onClick={handleToggle}>{isOpen ? <AiOutlineMinus /> : <AiOutlinePlus />}</button>
+            </header>
+            {isOpen && <p>{info}</p>}
+        </article>
     )
 }
