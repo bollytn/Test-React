@@ -4,13 +4,12 @@ import items from "./data"
 import "./Menu.css"
 import { useState } from "react";
 export default function Menus() {
-    const [menuItems, setMenuItems] = useState(items);
+    const [menuItems, setMenuItems] = useState(items)
     const [categories, setCategories] = useState([])
 
     const filterItems = (categorie) => {
         if (categorie === 'all') {
-            setMenuItems(items)
-            return
+            return setMenuItems(items)
         }
         const newItems = items.filter(item => item.category === categorie)
         setMenuItems(newItems)
