@@ -7,6 +7,11 @@ export default function Menus() {
     const [menuItems, setMenuItems] = useState(items)
     const [categories, setCategories] = useState([])
 
+    const AllCategories = items.map((item) => item.category)
+    const uniqueCategories = [...new Set(AllCategories)]
+    console.log(uniqueCategories);
+
+
     const filterItems = (categorie) => {
         if (categorie === 'all') {
             return setMenuItems(items)
