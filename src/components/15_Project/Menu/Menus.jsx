@@ -4,12 +4,12 @@ import items from "./data"
 import "./Menu.css"
 import { useState } from "react";
 export default function Menus() {
-    const [menuItems, setMenuItems] = useState(items)
-    const [categories, setCategories] = useState([])
 
     const AllCategories = items.map((item) => item.category)
-    const uniqueCategories = [...new Set(AllCategories)]
-    console.log(uniqueCategories);
+    const uniqueCategories = ['all', ...new Set(AllCategories)]
+
+    const [menuItems, setMenuItems] = useState(items)
+    const [categories, setCategories] = useState(uniqueCategories)
 
 
     const filterItems = (categorie) => {
@@ -27,7 +27,7 @@ export default function Menus() {
                     <h2>our menu</h2>
                     <div className="underline"></div>
                 </div>
-                <Categorie filterItems={filterItems} />
+                <Categorie filterItems={filterItems} categorie={categories} />
                 <Menu items={menuItems} />
             </section>
         </main>
