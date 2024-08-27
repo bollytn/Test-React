@@ -1,6 +1,9 @@
-const Categorie = ({ filterItems, categories }) => {
+export default function Categorie({ filterItems, categories }) {
     return (
         <div className="btn-container">
+            <button className="filter-btn" onClick={() => filterItems('all')}>
+                all
+            </button>
             {categories && categories.map((categorie, index) => {
                 return (
                     <button
@@ -16,5 +19,3 @@ const Categorie = ({ filterItems, categories }) => {
         </div>
     )
 }
-
-export default Categorie;
