@@ -4,7 +4,7 @@ export default function Categorie({ filterItems, categories }) {
             <button className="filter-btn" onClick={() => filterItems('all')}>
                 all
             </button>
-            {categories && categories.map((categorie, index) => {
+            {categories?.map((categorie, index) => {
                 return (
                     <button
                         type="button"
