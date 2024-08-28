@@ -2,13 +2,13 @@
 // import { Container } from "./components/Portfolio/components/index"
 // import { Header, Footer, Hero, MostPopulaire } from "./components/Portfolio/sections/index";
 
-import { Tabs } from "./components/15_Project/tabs/Tabs"
+import Slider from "./components/15_Project/slider/Slider"
 
 
 const App = () => {
   return (
     <>
-      <Tabs />
+      <Slider />
     </>
   )
 }
