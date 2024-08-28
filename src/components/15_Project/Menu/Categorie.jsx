@@ -2,8 +2,6 @@ export default function Categorie({ filterItems, categories }) {
     return (
         <div className="btn-container">
 
-            {/* function filter mapping */}
-
             {categories.map((categorie, index) => {
                 return (
                     <button

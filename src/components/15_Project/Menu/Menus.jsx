@@ -11,7 +11,6 @@ export default function Menus() {
     const [menuItems, setMenuItems] = useState(items)
     const [categories, setCategories] = useState(uniqueCategories)
 
-
     const filterItems = (categorie) => {
         if (categorie === 'all') {
             return setMenuItems(items)
