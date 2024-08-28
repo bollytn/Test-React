@@ -27,7 +27,7 @@ export default function Menus() {
                     <h2>our menu</h2>
                     <div className="underline"></div>
                 </div>
-                <Categorie filterItems={filterItems} categorie={categories} />
+                <Categorie filterItems={filterItems} categories={categories} />
                 <Menu items={menuItems} />
             </section>
         </main>
