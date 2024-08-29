@@ -2,13 +2,14 @@
 // import { Container } from "./components/Portfolio/components/index"
 // import { Header, Footer, Hero, MostPopulaire } from "./components/Portfolio/sections/index";
 
-import Slider from "./components/15_Project/slider/Slider"
+import Lorem from "./components/15_Project/lorem/Lorem"
+
 
 
 const App = () => {
   return (
     <>
-      <Slider />
+      <Lorem />
     </>
   )
 }
