@@ -4,12 +4,19 @@ import './style.css';
 
 export default function Lorem() {
     const [count, setCount] = useState(0)
-    const [text, setText] = useState(data)
+    const [text, setText] = useState([])
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('hello');
-        const text = event.target.elements.text.value.trim();
+        let amount = parseInt(count)
+        if (count <= 0) {
+            amount = 1
+        }
+        if (count > 8) {
+            amount = 8
+        }
+        setText(data.slice(0, amount))
+
     }
     return (
         <section className="section-center">
@@ -18,8 +25,18 @@ export default function Lorem() {
                 <label htmlFor="amount">
                     paragraphe
                 </label>
-                <input type="number" name="amount" id="amount" value={count} />
+                <input type="number" name="amount" id="amount"
+                    value={count}
+                    onChange={(e) => setCount(e.target.value)} />
+                <button className="btn" type="submit">generate</button>
             </form>
-        </section>
+            <article className="lorem-text">
+                {
+                    text.map((item, index) => (
+                        < p key={index} > {item}</p>
+                    ))
+                }
+            </article>
+        </section >
     )
 }
