@@ -35,6 +35,12 @@ export default function Todo() {
         setList([])
     }
 
+    const removeItem = (id) => {
+        list.filter((item)=>{
+            
+        })
+    }
+
     return (
         <section className="section-center">
             <form className='grocery-form' onSubmit={handleSubmit}>
