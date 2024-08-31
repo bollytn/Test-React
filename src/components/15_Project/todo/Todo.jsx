@@ -13,7 +13,6 @@ export default function Todo() {
         if (!name) {
             // display alert
             showAlert(true,'danger','please enter value')
-            
         } else if (name && isEditing) {
             // deal with edit
             console.log('deal with edit');
@@ -33,7 +32,7 @@ export default function Todo() {
 
     const clearList = () => {
         showAlert(true,'danger','empty list')
-        
+        setList([])
     }
 
     return (
@@ -51,7 +50,7 @@ export default function Todo() {
             {list.length > 0 && (
                 <div className="grocery-container">
                     <List items={list} />
-                    <button className='clear-btn'>clear items</button>
+                    <button className='clear-btn' onClick={clearList}>clear items</button>
                 </div>
             )}
 
