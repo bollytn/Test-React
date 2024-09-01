@@ -2,12 +2,22 @@ import { FaBars } from "react-icons/fa";
 import logo from './logo.svg'
 import { links, social } from './data'
 import './style.css'
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
     const [showLink, setShowLink] = useState(false)
     const linksContainerRef = useRef(null)
     const linksRef = useRef(null)
+
+    useEffect( () => {
+       const linkH  = linksRef.current.getBoundingClientRect()
+        if(showLink) {
+            linksContainerRef.current.style.height = `${linkH}px`
+        }else {
+            linksContainerRef.current.style.height = '0px'
+        }
+    },[showLink])
+
     return (
         <nav>
             <div className="nav-center">
@@ -17,9 +27,9 @@ export default function Navbar() {
                         <FaBars onClick={() => setShowLink(!showLink)} />
                     </button>
                 </div>
-                
-                <div className={`${showLink ? "links-container show-container" : "links-container"}`}>
-                    <ul className="links">
+
+                <div className="links-container" ref={linksContainerRef}>
+                    <ul className="links" ref={linksRef}>
                         {links.map((link) => {
                             const { id, url, text } = link
                             return (
