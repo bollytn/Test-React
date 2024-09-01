@@ -10,7 +10,7 @@ export default function Navbar() {
     const linksRef = useRef(null)
 
     useEffect( () => {
-       const linkH  = linksRef.current.getBoundingClientRect()
+       const linkH  = linksRef.current.getBoundingClientRect().height
         if(showLink) {
             linksContainerRef.current.style.height = `${linkH}px`
         }else {
