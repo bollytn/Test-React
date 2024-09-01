@@ -24,7 +24,9 @@ export default function Todo() {
         if (!name) {
             // display alert
             showAlert(true, 'danger', 'please enter value')
-        } else if (name && isEditing) {
+
+        }
+        else if (name && isEditing) {
             // deal with edit
             setList(list.map((item) => {
                 if (item.id === editId) {
@@ -36,7 +38,9 @@ export default function Todo() {
             setIsEditing(false)
             setEditId(null)
             showAlert(true, 'success', 'value changed')
-        } else {
+
+        }
+        else {
             showAlert(true, 'success', 'item added to the list')
             const newItem = { id: new Date().getTime().toString(), title: name }
             setList([...list, newItem])
