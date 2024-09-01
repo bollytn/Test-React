@@ -25,14 +25,13 @@ export default function Todo() {
         if (!name) {
             // display alert
             showAlert(true, 'danger', 'please enter value')
-
         }
         // if name =true and isedting = true ==> editing name
         else if (name && isEditing) {
             // deal with edit
             setList(list.map((item) => {
                 if (item.id === editId) {
-                    return { ...item, title: name }
+                    return { ...item,title: name }
                 }
                 return item
             }))
@@ -48,8 +47,6 @@ export default function Todo() {
             showAlert(true, 'success', 'item added to the list')
             const newItem = { id: new Date().getTime().toString(), title: name }
             setList([...list, newItem])
-            console.log('show alert');
-            console.log(list);
             setName('')
         }
     }
