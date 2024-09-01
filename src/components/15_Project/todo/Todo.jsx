@@ -7,6 +7,7 @@ export default function Todo() {
     const [alert, setAlert] = useState({ show: false, type: '', msg: '' })
     const [isEditing, setIsEditing] = useState(false)
     const [list, setList] = useState([])
+    const [editId, setEditId] = useState(0)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -15,7 +16,12 @@ export default function Todo() {
             showAlert(true, 'danger', 'please enter value')
         } else if (name && isEditing) {
             // deal with edit
-            console.log('deal with edit');
+            setList(list.map((item) =>{
+                if(item.id === editId)
+                    return item*
+            } ))       
+            
+             
         } else {
             showAlert(true, 'success', 'item added to the list')
             const newItem = { id: new Date().getTime().toString(), title: name }
@@ -41,13 +47,20 @@ export default function Todo() {
         setList(newList)
     }
 
+    const editItem = (id) => {
+        const specificItem = list.find(item => item.id === id)
+        setIsEditing(true)
+        setEditId(id)
+        setName(specificItem.title)
+    }
+
     return (
         <section className="section-center">
             <form className='grocery-form' onSubmit={handleSubmit}>
-                {alert.show && <Alert {...alert} removeAlert={showAlert} list={list}/>}
+                {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
                 <h4>Todo Lists</h4>
                 <div className="form-control">
-                    <input type="text" className="grocery" placeholder='e.g. eggs ' value={name} onChange={(e) => setName(e.target.value)} />
+                    <input type="text" className="grocery" placeholder='e.g. eggs' value={name} onChange={(e) => setName(e.target.value)} />
                     <button type="submit" className="submit-btn">
                         {isEditing ? 'edit' : 'submit'}
                     </button>
@@ -55,7 +68,7 @@ export default function Todo() {
             </form>
             {list.length > 0 && (
                 <div className="grocery-container">
-                    <List items={list} removeItem={removeItem} />
+                    <List items={list} removeItem={removeItem} editItem={editItem} />
                     <button className='clear-btn' onClick={clearList}>clear items</button>
                 </div>
             )}
