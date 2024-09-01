@@ -21,11 +21,13 @@ export default function Todo() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        // there is nothing in input
         if (!name) {
             // display alert
             showAlert(true, 'danger', 'please enter value')
 
         }
+        // if name =true and isedting = true ==> editing name
         else if (name && isEditing) {
             // deal with edit
             setList(list.map((item) => {
@@ -34,12 +36,14 @@ export default function Todo() {
                 }
                 return item
             }))
+            // make some usestate par default
             setName('')
             setIsEditing(false)
             setEditId(null)
             showAlert(true, 'success', 'value changed')
 
         }
+        // click buuton submit 
         else {
             showAlert(true, 'success', 'item added to the list')
             const newItem = { id: new Date().getTime().toString(), title: name }
