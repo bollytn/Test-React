@@ -1,5 +1,15 @@
-export default function Home () {
+import { FaBars } from "react-icons/fa";
+
+
+export default function Home() {
     return (
-        <h1>home</h1>
+        <main>
+            <button className="sidebar-toggle">
+                <FaBars />
+            </button>
+            <button type="button" class="btn">
+                show modal
+            </button>
+        </main>
     )
 }
