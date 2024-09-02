@@ -2,13 +2,17 @@
 // import { Container } from "./components/Portfolio/components/index"
 // import { Header, Footer, Hero, MostPopulaire } from "./components/Portfolio/sections/index";
 
-import Strapi from "./components/15_Project/straapi/Strapi"
-import Sidebar from "./components/15_Project/sidebar/Sidebar"
+import Home from "./components/15_Project/sidebar/Home"
+import Modal from "./components/15_Project/sidebar/Modal"
+import Sidebare from "./components/15_Project/sidebar/Sidebare"
 
 const App = () => {
   return (
     <>
-      <Sidebar />
+      <Home />
+      <Modal />
+      <Sidebare />
+
     </>
   )
 }
