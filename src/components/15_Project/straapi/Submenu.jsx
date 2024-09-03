@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useContext } from 'react'
 import { AppContext } from './context'
 
 const Submenu = () => {
-  const { isSubmenuOpen, location } = useContext(AppContext)
+  const { isSubmenuOpen, location, page: { page, links } } = useContext(AppContext)
   const container = useRef(null)
   useEffect(() => {
     const submenu = container.current
@@ -13,7 +13,18 @@ const Submenu = () => {
 
   return (
     <aside ref={container} className={`${isSubmenuOpen ? 'submenu show' : 'submenu'}`}>
-      <h4>submenu</h4>
+      <h4>{page}</h4>
+
+      <div className='submenu-center col-2'>
+
+        {links.map((link, index) => {
+          const { label, icon, url } = link
+          return <a key={index} href={url}>
+            {icon}
+            {label}
+          </a>
+        })}
+      </div>
     </aside>
   )
 }
