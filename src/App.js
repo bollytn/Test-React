@@ -4,12 +4,13 @@
 
 
 import Cards from './components/15_Project/card/Cards'
+import Reducerr from './components/Hook/Reducerr'
 
 
 const App = () => {
   return (
     <>
-      <Cards />
+      <Reducerr />
     </>
   )
 }
