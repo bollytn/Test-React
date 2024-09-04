@@ -5,7 +5,7 @@ import { AppContext } from './context'
 
 
 const Navbar = () => {
-  const { openSidebar, openSubmenu, closeSubmenu } = useContext(AppContext)
+  const { openSidebar, openSubmenu } = useContext(AppContext)
 
   const displayMenu = (e) => {
     const page = e.target.textContent

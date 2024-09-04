@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect, useContext } from 'react'
+import React, { useRef, useEffect, useContext } from 'react'
 import { AppContext } from './context'
 
 const Submenu = () => {
-  const { isSubmenuOpen, location, page: { page, links } } = useContext(AppContext)
+  const { isSubmenuOpen, location, page: { page, links }, closeSubmenu } = useContext(AppContext)
   const container = useRef(null)
   useEffect(() => {
     const submenu = container.current
@@ -12,9 +12,12 @@ const Submenu = () => {
   }, [location])
 
   return (
-    <aside ref={container} className={`${isSubmenuOpen ? 'submenu show' : 'submenu'}`}>
-      <h4>{page}</h4>
+    <aside
+      ref={container}
+      className={`${isSubmenuOpen ? 'submenu show' : 'submenu'}`}
+      onMouseLeave={closeSubmenu}>
 
+      <h4>{page}</h4>
       <div className='submenu-center col-2'>
 
         {links.map((link, index) => {
