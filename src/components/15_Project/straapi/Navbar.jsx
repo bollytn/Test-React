@@ -20,7 +20,6 @@ const Navbar = () => {
     if(!linkBtn) {
     closeSubmenu()
     }
-    
   }
 
   return (
