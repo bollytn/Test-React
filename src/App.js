@@ -3,13 +3,13 @@
 // import { Header, Footer, Hero, MostPopulaire } from "./components/Portfolio/sections/index";
 
 
-import Strapi from './components/15_Project/straapi/Strapi'
+import Cards from './components/15_Project/card/Cards'
 
 
 const App = () => {
   return (
     <>
-      <Strapi />
+      <Cards />
     </>
   )
 }
