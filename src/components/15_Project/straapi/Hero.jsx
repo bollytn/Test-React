@@ -1,12 +1,12 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import phoneImg from './images/phone.svg'
 import { AppContext } from './context'
 
 const Hero = () => {
-  const { colseSubmenu } = useContext(AppContext)
+  const { closeSubmenu } = useContext(AppContext)
 
   return (
-    <section className='hero'>
+    <section className='hero' onMouseOver={closeSubmenu}>
       <div className="hero-center">
         <article className='hero-info'>
           <h1>payment for the internet</h1>

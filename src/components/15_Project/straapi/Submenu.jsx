@@ -1,25 +1,31 @@
-import React, { useRef, useEffect, useContext } from 'react'
+import React, { useRef, useEffect, useContext, useState } from 'react'
 import { AppContext } from './context'
 
 const Submenu = () => {
-  const { isSubmenuOpen, location, page: { page, links }, closeSubmenu } = useContext(AppContext)
+  const { isSubmenuOpen, location, page: { page, links } } = useContext(AppContext)
   const container = useRef(null)
+  const [columns, setColumns] = useState('')
   useEffect(() => {
+    setColumns('col-2')
     const submenu = container.current
     const { center, bottom } = location
     submenu.style.left = `${center}px`
     submenu.style.top = `${bottom}px`
-  }, [location])
+    if (links.length === 3) {
+      setColumns('col-3')
+    }
+    if (links.length > 3) {
+      setColumns('col-4')
+    }
+  }, [location, links])
 
   return (
     <aside
       ref={container}
-      className={`${isSubmenuOpen ? 'submenu show' : 'submenu'}`}
-      onMouseLeave={closeSubmenu}>
+      className={`${isSubmenuOpen ? 'submenu show' : 'submenu'}`}>
 
       <h4>{page}</h4>
-      <div className='submenu-center col-2'>
-
+      <div className={`submenu-center ${columns}`}>
         {links.map((link, index) => {
           const { label, icon, url } = link
           return <a key={index} href={url}>
