@@ -3,14 +3,12 @@
 // import { Header, Footer, Hero, MostPopulaire } from "./components/Portfolio/sections/index";
 
 
-import Cards from './components/15_Project/card/Cards'
-import Reducerr from './components/Hook/Reducerr'
-
+import ReducerForm from './components/Hook/ReducerForm'
 
 const App = () => {
   return (
     <>
-      <Reducerr />
+      <ReducerForm />
     </>
   )
 }
