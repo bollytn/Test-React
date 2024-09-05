@@ -1,24 +1,33 @@
 import { useReducer } from "react"
 import './style.css'
-import { animated } from '@react-spring/web'
+import { animated, useSpring } from '@react-spring/web'
 
 export default function ReducerCount() {
 
     const initialState = {
         count: 0,
-        error: null
+        error: null,
+        show: false
     }
 
+    const fade = useSpring({
+        opacity: state.show ? 1 : 0
+    })
+
+    
     const reducer = (state, action) => {
+
         switch (action.type) {
             case 'up':
                 {
                     const newCount = state.count + 1
                     const hasError = newCount > 5
+
                     return {
                         ...state,
                         count: hasError ? state.count : newCount,
-                        error: hasError ? 'Maximum reached' : null
+                        error: hasError ? 'Maximum reached' : null,
+                        show: hasError ? true : false
                     }
                 }
             case 'down':
@@ -28,11 +37,12 @@ export default function ReducerCount() {
                     return {
                         ...state,
                         count: hasError ? state.count : newCount,
-                        error: hasError ? 'Minimum reached' : null
+                        error: hasError ? 'Minimum reached' : null,
+                        show: hasError ? true : false
                     }
                 }
 
-            case 'reset': return { count: 0 }
+            case 'reset': return { initialState }
             default: return state
         }
     }
