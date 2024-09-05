@@ -13,31 +13,40 @@
   justify-content: space-between;
 }
 .error {
+  display: block;
   position: absolute;
-  transform: translate(-50%,-50%);
-  top: 58%; 
+  transform: translate(-50%, -50%);
+  top: 58%;
   left: 50%;
   font-size: 38px;
   color: red;
 }
 .error.show {
-display: block;
-animation: bounce .5s linear;
+  animation: bounce 0.5s linear;
 }
-
-
-
 @keyframes bounce {
-  0%{
-      top : 0
+  0% {
+    top: 0;
   }
   50% {
-    top : 70%
+    top: 70%;
   }
   70% {
-    top : 40%
+    top: 40%;
   }
-  100%{
-      top : 58%
+  100% {
+    top: 58%;
+  }
+}
+
+.error.hide {
+  animation: bounceHide 5s linear;
+}
+@keyframes bounceHide {
+  0% {
+    top: 58%;
+  }
+  100% {
+    top: 0%;
   }
 }

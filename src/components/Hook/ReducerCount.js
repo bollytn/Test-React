@@ -52,7 +52,7 @@ export default function ReducerCount() {
                     onClick={() => { dispatch({ type: 'reset' }) }}
                     className="btn btn-secondary">reset</button>
             </div>
-            <div className={`${state.error ? 'error show' : 'error'}`}>
+            <div className={`error ${state.error ? 'show' : 'hide'}`}>
                 <h2>{state.error}</h2>
             </div>
         </main>
