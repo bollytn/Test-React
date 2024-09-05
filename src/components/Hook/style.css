@@ -6,8 +6,38 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 .btn-submit {
   display: flex;
   justify-content: space-between;
+}
+.error {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 58%; 
+  left: 50%;
+  font-size: 38px;
+  color: red;
+}
+.error.show {
+display: block;
+animation: bounce .5s linear;
+}
+
+
+
+@keyframes bounce {
+  0%{
+      top : 0
+  }
+  50% {
+    top : 70%
+  }
+  70% {
+    top : 40%
+  }
+  100%{
+      top : 58%
+  }
 }

@@ -3,12 +3,12 @@
 // import { Header, Footer, Hero, MostPopulaire } from "./components/Portfolio/sections/index";
 
 
-import ReducerForm from './components/Hook/ReducerForm'
+import ReducerCount from './components/Hook/ReducerCount'
 
 const App = () => {
   return (
     <>
-      <ReducerForm />
+      <ReducerCount />
     </>
   )
 }
