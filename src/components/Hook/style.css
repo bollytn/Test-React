@@ -16,26 +16,26 @@
   display: block;
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 58%;
+  top: 60%;
   left: 50%;
   font-size: 38px;
   color: red;
 }
 .error.show {
-  animation: bounce 0.5s linear;
+  animation: bounce 0.4s linear;
 }
 @keyframes bounce {
   0% {
     top: 0;
   }
   50% {
-    top: 70%;
+    top: 65%;
   }
   70% {
-    top: 40%;
+    top: 55%;
   }
   100% {
-    top: 58%;
+    top: 60%;
   }
 }
 
@@ -49,4 +49,17 @@
   100% {
     top: 0%;
   }
+}
+
+/* react spring  */
+
+.anim {
+  margin-left: -22px;
+  margin-bottom: 10px;
+}
+.anim h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
