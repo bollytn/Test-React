@@ -6,7 +6,7 @@ export default function ReducerCount() {
 
     const initialState = {
         count: 0,
-        error: false,
+        error: null,
         show: false,
     };
 
@@ -44,8 +44,14 @@ export default function ReducerCount() {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const fadein = useSpring({
-        opacity: state.show ? 1 : 0
+        opacity: state.show ? 1 : 0,
+        config: {
+            tension: 200,
+            friction: 20
+        }
     });
+
+
 
     return (
         <main className="reduceForm">
