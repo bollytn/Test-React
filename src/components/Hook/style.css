@@ -21,35 +21,6 @@
   font-size: 38px;
   color: red;
 }
-.error.show {
-  animation: bounce 0.4s linear;
-}
-@keyframes bounce {
-  0% {
-    top: 0;
-  }
-  50% {
-    top: 65%;
-  }
-  70% {
-    top: 55%;
-  }
-  100% {
-    top: 60%;
-  }
-}
-
-.error.hide {
-  animation: bounceHide 5s linear;
-}
-@keyframes bounceHide {
-  0% {
-    top: 58%;
-  }
-  100% {
-    top: 0%;
-  }
-}
 
 /* react spring  */
 

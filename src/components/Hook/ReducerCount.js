@@ -68,7 +68,8 @@ export default function ReducerCount() {
                     onClick={() => { dispatch({ type: 'reset' }) }}
                     className="btn btn-secondary">reset</button>
             </div>
-            <animated.div style={fadein} className={`error ${state.error ? 'show' : 'hide'}`}>
+
+            <animated.div style={fadein} className="error">
                 <h2>{state.error}</h2>
             </animated.div>
         </main>
