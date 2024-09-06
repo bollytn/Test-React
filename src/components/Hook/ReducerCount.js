@@ -18,16 +18,14 @@ export default function ReducerCount() {
 
         const tempBtn = container.current.getBoundingClientRect()
 
-        const centerBtn = tempBtn.left
-        const bottmBtn = tempBtn.top
+        const centerBtn = tempBtn.left 
+        const bottmBtn = tempBtn.bottom - 20
         setLocationBtn({ centerBtn, bottmBtn })
-        console.log(locationBtn);
-        
-        const center = tempBtn.left - 200
-        const bottom = tempBtn.bottom - 200
+
+        const center = tempBtn.left
+        const bottom = tempBtn.bottom
         setLocation({ center, bottom })
-        console.log(location);
-        
+
 
         switch (action.type) {
             case 'up':
@@ -53,7 +51,7 @@ export default function ReducerCount() {
                         show: hasError ? true : false
                     }
                 }
-
+                
             case 'reset': return { ...initialState }
             default: return state
         }
@@ -62,9 +60,11 @@ export default function ReducerCount() {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const fadein = useSpring({
+
         opacity: state.show ? 1 : 0,
-        x: state.show ? locationBtn.center : 0,
-        y: state.show ? locationBtn.bottom : 0,
+        x: state.show ? locationBtn.center : locationBtn.center,
+        y: state.show ? locationBtn.bottom : locationBtn.bottom,
+
         config: {
             tension: 200,
             friction: 20,
@@ -95,7 +95,11 @@ export default function ReducerCount() {
                     onClick={() => { dispatch({ type: 'reset' }) }}
                     className="btn btn-secondary">reset</button>
             </div>
-            <animated.div style={fadein} className="error">
+            <animated.div style={{
+                ...fadein,
+                border:'1px solid',
+                borderRadius: '30px'
+            }} className="error">
                 <h2>{state.error}</h2>
             </animated.div>
         </main>
