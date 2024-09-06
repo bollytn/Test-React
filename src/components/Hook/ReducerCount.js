@@ -1,8 +1,12 @@
-import { useReducer } from "react";
+import { useReducer, useRef, useState } from "react";
 import './style.css';
 import { animated, useSpring } from '@react-spring/web';
 
 export default function ReducerCount() {
+
+    const [location, setLocation] = useState({})
+    const [locationBtn, setLocationBtn] = useState({})
+    const container = useRef(null)
 
     const initialState = {
         count: 0,
@@ -11,6 +15,20 @@ export default function ReducerCount() {
     };
 
     const reducer = (state, action) => {
+
+        const tempBtn = container.current.getBoundingClientRect()
+
+        const centerBtn = tempBtn.left
+        const bottmBtn = tempBtn.top
+        setLocationBtn({ centerBtn, bottmBtn })
+        console.log(locationBtn);
+        
+        const center = tempBtn.left - 200
+        const bottom = tempBtn.bottom - 200
+        setLocation({ center, bottom })
+        console.log(location);
+        
+
         switch (action.type) {
             case 'up':
                 {
@@ -45,12 +63,14 @@ export default function ReducerCount() {
 
     const fadein = useSpring({
         opacity: state.show ? 1 : 0,
+        x: state.show ? location.center : locationBtn.centerBtn,
+        y: state.show ? location.bottom : locationBtn.bottomBtn,
         config: {
             tension: 200,
-            friction: 20
+            friction: 20,
+            duration: 400
         }
     });
-
 
 
     return (
@@ -68,6 +88,7 @@ export default function ReducerCount() {
                     onClick={() => { dispatch({ type: 'up' }) }}
                     className="btn btn-primary">up</button>
                 <button
+                    ref={container}
                     onClick={() => { dispatch({ type: 'down' }) }}
                     className="btn btn-primary">down</button>
                 <button
