@@ -1,6 +1,6 @@
-import { useReducer } from "react"
-import './style.css'
-import { animated, useSpring } from '@react-spring/web'
+import { useReducer } from "react";
+import './style.css';
+import { animated, useSpring } from '@react-spring/web';
 
 export default function ReducerCount() {
 
@@ -8,15 +8,9 @@ export default function ReducerCount() {
         count: 0,
         error: null,
         show: false
-    }
+    };
 
-    const fade = useSpring({
-        opacity: state.show ? 1 : 0
-    })
-
-    
     const reducer = (state, action) => {
-
         switch (action.type) {
             case 'up':
                 {
@@ -42,12 +36,16 @@ export default function ReducerCount() {
                     }
                 }
 
-            case 'reset': return { initialState }
+            case 'reset': return { ...initialState }
             default: return state
         }
-    }
+    };
 
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    const fadein = useSpring({
+        opacity: state.show ? 1 : 0
+    });
 
     return (
         <main className="reduceForm">
@@ -70,11 +68,9 @@ export default function ReducerCount() {
                     onClick={() => { dispatch({ type: 'reset' }) }}
                     className="btn btn-secondary">reset</button>
             </div>
-            <div className={`error ${state.error ? 'show' : 'hide'}`}>
+            <animated.div style={fadein} className={`error ${state.error ? 'show' : 'hide'}`}>
                 <h2>{state.error}</h2>
-            </div>
+            </animated.div>
         </main>
-    )
-
-
+    );
 }
