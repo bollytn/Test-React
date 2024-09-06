@@ -6,8 +6,8 @@ export default function ReducerCount() {
 
     const initialState = {
         count: 0,
-        error: null,
-        show: false
+        error: false,
+        show: false,
     };
 
     const reducer = (state, action) => {
@@ -20,7 +20,7 @@ export default function ReducerCount() {
                     return {
                         ...state,
                         count: hasError ? state.count : newCount,
-                        error: hasError ? 'Maximum reached' : null,
+                        error: hasError ? 'Maximum reached' : 'Minimum reached',
                         show: hasError ? true : false
                     }
                 }
@@ -31,7 +31,7 @@ export default function ReducerCount() {
                     return {
                         ...state,
                         count: hasError ? state.count : newCount,
-                        error: hasError ? 'Minimum reached' : null,
+                        error: hasError ? 'Minimum reached' : 'Maximum reached',
                         show: hasError ? true : false
                     }
                 }
@@ -68,7 +68,6 @@ export default function ReducerCount() {
                     onClick={() => { dispatch({ type: 'reset' }) }}
                     className="btn btn-secondary">reset</button>
             </div>
-
             <animated.div style={fadein} className="error">
                 <h2>{state.error}</h2>
             </animated.div>
