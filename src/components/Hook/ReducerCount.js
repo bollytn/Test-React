@@ -63,8 +63,8 @@ export default function ReducerCount() {
 
     const fadein = useSpring({
         opacity: state.show ? 1 : 0,
-        x: state.show ? location.center : locationBtn.centerBtn,
-        y: state.show ? location.bottom : locationBtn.bottomBtn,
+        x: state.show ? locationBtn.center : 0,
+        y: state.show ? locationBtn.bottom : 0,
         config: {
             tension: 200,
             friction: 20,
