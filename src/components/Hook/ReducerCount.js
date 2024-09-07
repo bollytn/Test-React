@@ -5,6 +5,7 @@ import { animated, config, useSpring } from "@react-spring/web";
 export default function ReducerCount() {
     const [location, setLocation] = useState({});
     const [locationBtn, setLocationBtn] = useState({});
+    const [currentPosition, setCurrentPosition] = useState(0);
     const container = useRef(null);
 
     const initialState = {
@@ -69,20 +70,24 @@ export default function ReducerCount() {
     });
 
     const [anim, api] = useSpring(() => ({
-        from: { x: 0 },
+        from: { x: currentPosition },
+        onChange:
+            (val) => {
+                setCurrentPosition(val.value.x);
+            },
         config: { duration: 1000 },
     }));
 
     const handleMouseEnter = () => {
         api.start({
-            from: { x: 0 },
+            from: { x: currentPosition },
             to: { x: 300 },
         });
     };
 
     const handleMouseLeave = () => {
         api.start({
-            from: { x: 300 },
+            from: { x: currentPosition },
             to: { x: 0 },
         });
     };
