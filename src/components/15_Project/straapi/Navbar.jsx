@@ -5,7 +5,7 @@ import { AppContext } from './context'
 
 
 const Navbar = () => {
-  const { openSidebar, openSubmenu,closeSubmenu } = useContext(AppContext)
+  const { openSidebar, openSubmenu, closeSubmenu } = useContext(AppContext)
 
   const displayMenu = (e) => {
     const page = e.target.textContent
@@ -16,9 +16,9 @@ const Navbar = () => {
   }
 
   const handleSubmenu = (e) => {
-   const linkBtn =  e.target.classList.contains('link-btn')
-    if(!linkBtn) {
-    closeSubmenu()
+    const linkBtn = e.target.classList.contains('link-btn')
+    if (!linkBtn) {
+      closeSubmenu()
     }
   }
 
