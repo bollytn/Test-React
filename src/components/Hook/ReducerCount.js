@@ -53,7 +53,7 @@ export default function ReducerCount() {
 
     const fadein = useSpring({
         opacity: state.show ? 1 : 0,
-        top: state.show ? '62' : '0%',
+        top: state.show ? '59%' : '0%',
         display: state.show ? 'block' : 'block',
 
         config: {
@@ -131,7 +131,7 @@ export default function ReducerCount() {
             </div>
             <animated.div
                 style={{
-                    ...fadein
+                    ...fadein,
                 }}
                 className="error"
             >
