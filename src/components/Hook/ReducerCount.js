@@ -1,6 +1,6 @@
 import { useReducer, useRef, useState } from "react";
 import "./style.css";
-import { animated, config, useSpring } from "@react-spring/web";
+import { animated, useSpring } from "@react-spring/web";
 
 export default function ReducerCount() {
     const [location, setLocation] = useState({});
@@ -63,26 +63,31 @@ export default function ReducerCount() {
         },
     });
 
+    const AnimBtn = useSpring({
+        transform:state.show ? 'scale(1.2)':'scale(1)',
+        config: { duration: 500 },
+    })
+
     const [anim, api] = useSpring(() => ({
-        from: { x: currentPosition },
+        from: { y: currentPosition },
         onChange:
             (val) => {
-                setCurrentPosition(val.value.x);
+                setCurrentPosition(val.value.y);
             },
         config: { duration: 1000 },
     }));
 
     const handleMouseEnter = () => {
         api.start({
-            from: { x: currentPosition },
-            to: { x: 300 },
+            from: { y: currentPosition },
+            to: { y: 5 },
         });
     };
 
     const handleMouseLeave = () => {
         api.start({
-            from: { x: currentPosition },
-            to: { x: 0 },
+            from: { y: currentPosition },
+            to: { y: 0 },
         });
     };
 
@@ -93,7 +98,7 @@ export default function ReducerCount() {
                 onMouseLeave={handleMouseLeave}
                 className="anim"
                 style={{
-                    ...anim,
+                    ...AnimBtn,
                     width: 80,
                     height: 80,
                     background: "#ff6d6d",
@@ -108,6 +113,7 @@ export default function ReducerCount() {
                         dispatch({ type: "up" });
                     }}
                     className="btn btn-primary"
+                    style={AnimBtn}
                 >
                     up
                 </button>
@@ -117,6 +123,7 @@ export default function ReducerCount() {
                         dispatch({ type: "down" });
                     }}
                     className="btn btn-primary"
+                    style={AnimBtn}
                 >
                     down
                 </button>
@@ -125,12 +132,14 @@ export default function ReducerCount() {
                         dispatch({ type: "reset" });
                     }}
                     className="btn btn-secondary"
+                    style={AnimBtn}
                 >
                     reset
                 </button>
             </div>
             <animated.div
                 style={{
+                    ...AnimBtn,
                     ...fadein,
                 }}
                 className="error"
