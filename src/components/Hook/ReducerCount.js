@@ -4,7 +4,6 @@ import { animated, config, useSpring } from "@react-spring/web";
 
 export default function ReducerCount() {
     const [location, setLocation] = useState({});
-    const [locationBtn, setLocationBtn] = useState({});
     const [currentPosition, setCurrentPosition] = useState(0);
     const container = useRef(null);
 
@@ -16,11 +15,6 @@ export default function ReducerCount() {
 
     const reducer = (state, action) => {
         const tempBtn = container.current.getBoundingClientRect();
-
-        const centerBtn = tempBtn.left;
-        const bottmBtn = tempBtn.bottom - 20;
-        setLocationBtn({ centerBtn, bottmBtn });
-
         const center = tempBtn.left;
         const bottom = tempBtn.bottom;
         setLocation({ center, bottom });
@@ -59,8 +53,8 @@ export default function ReducerCount() {
 
     const fadein = useSpring({
         opacity: state.show ? 1 : 0,
-        x: state.show ? locationBtn.center : locationBtn.center,
-        y: state.show ? locationBtn.bottom : locationBtn.bottom,
+        top: state.show ? '62' : '0%',
+        display: state.show ? 'block' : 'block',
 
         config: {
             tension: 200,
@@ -137,9 +131,7 @@ export default function ReducerCount() {
             </div>
             <animated.div
                 style={{
-                    ...fadein,
-                    border: "1px solid",
-                    borderRadius: "30px",
+                    ...fadein
                 }}
                 className="error"
             >
