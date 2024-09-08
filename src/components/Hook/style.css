@@ -87,3 +87,10 @@
   align-items: center;
   font-size: 3em;
 }
+.carrousel-container .title {
+  font-size: 1em;
+  margin-bottom: 30px;
+  position: absolute;
+  top: 5%;
+  text-align: center;
+}
