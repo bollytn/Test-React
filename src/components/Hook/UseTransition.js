@@ -10,7 +10,7 @@ const UseTransition = () => {
 
     const [colors, setColors] = useState(COLORS);
 
-    const transitions = useTransition(data, {
+    const transitions = useTransition(colors, {
         from: { opacity: 0 },
         enter: { opacity: 1 },
         leave: { opacity: 0 },
