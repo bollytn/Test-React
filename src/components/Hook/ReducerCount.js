@@ -1,39 +1,11 @@
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useReducer, useRef, useState } from "react";
 import "./style.css";
-import { animated, useSpring, useTransition } from "@react-spring/web";
+import { animated, useSpring } from "@react-spring/web";
 
 export default function ReducerCount() {
     const [location, setLocation] = useState({});
     const [currentPosition, setCurrentPosition] = useState(0);
     const container = useRef(null);
-
-    // use transition
-    const [items] = useState([
-        { title: 'GraphQL changed the way we create software', id: 0 },
-        { title: 'Learn about GraphQL language for free in the browser', id: 1 },
-        { title: 'Learn how to be a lead frontend engineer with GraphQL-driven React and Apollo applications', id: 2 }
-    ]);
-    const [index, setIndex] = useState(0);
-
-    const fadeInTransition = useTransition(items[index], item => item.id,
-        {
-            from: { opacity: 0, transform: "translateY(-100%)" },
-            enter: { opacity: 1, transform: "translateY(0)" },
-            leave: { opacity: 0, transform: "translateY(100%)" },
-        },
-        {
-            delay: (index) => index * 100,
-            duration: 300,
-            ease: "easeInOut",
-        }
-    )
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIndex((state) => (state + 1) % items.length)
-        }, 4000);
-        return () => clearInterval(interval);
-    }, [])
 
     const initialState = {
         count: 0,
@@ -123,33 +95,6 @@ export default function ReducerCount() {
 
 
         <main className="reduceForm">
-
-            <h1>Count Reducer</h1>
-            <button
-                onClick={() => {
-                    dispatch({ type: "reset" });
-                }}
-                className="btn btn-primary"
-            >
-                Reset
-            </button>
-            <animated.div
-                style={{ ...fadein, position: 'absolute', top: '0%', left: '50%', transform: 'translate(-50%, -50%)' }}
-            >
-                {fadeInTransition((item, state) =>
-                    <animated.div
-                        key={item.id}
-                        style={{
-                            fontSize: state ? '1.5em' : '1em',
-                            fontWeight: state ? 'bold' : 'normal',
-                            color: state ? 'red' : 'black',
-                            marginTop: 10,
-                        }}
-                    >
-                        {item.title}
-                    </animated.div>
-                )}
-            </animated.div>
 
             <animated.div
                 onMouseEnter={handleMouseEnter}

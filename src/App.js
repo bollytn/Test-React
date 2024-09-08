@@ -4,11 +4,12 @@
 
 
 import ReducerCount from './components/Hook/ReducerCount'
+import UseTransition from './components/Hook/UseTransition'
 
 const App = () => {
   return (
     <>
-      <ReducerCount />
+      <UseTransition />
     </>
   )
 }

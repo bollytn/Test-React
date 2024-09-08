@@ -8,6 +8,11 @@
   flex-direction: column;
   position: relative;
 }
+.reduceForm .color {
+  font: 4em;
+  font-weight: 800;
+  line-height: 80px;
+}
 .btn-submit {
   display: flex;
   justify-content: space-between;
