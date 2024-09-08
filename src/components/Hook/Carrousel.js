@@ -24,7 +24,7 @@ const Carrousel = ({ slides = ['slide1', 'slide2', 'slides3'] }) => {
 
     return (
         <div className="carrousel-container">
-            <button className="icon" onClick={prevSlide}>
+            <button className="icon left" onClick={prevSlide}>
                 <SlArrowRightCircle />
             </button>
             <div className="slides">
@@ -36,7 +36,7 @@ const Carrousel = ({ slides = ['slide1', 'slide2', 'slides3'] }) => {
                     )
                 })}
             </div>
-            <button className="icon" onClick={nextSlide}>
+            <button className="icon right" onClick={nextSlide}>
                 <SlArrowLeftCircle />
             </button>
         </div>
