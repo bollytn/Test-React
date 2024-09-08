@@ -3,13 +3,12 @@
 // import { Header, Footer, Hero, MostPopulaire } from "./components/Portfolio/sections/index";
 
 
-import ReducerCount from './components/Hook/ReducerCount'
-import UseTransition from './components/Hook/UseTransition'
+import Carrousel from './components/Hook/Carrousel'
 
 const App = () => {
   return (
     <>
-      <UseTransition />
+      <Carrousel />
     </>
   )
 }

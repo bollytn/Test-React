@@ -10,13 +10,6 @@ const UseTransition = () => {
 
     const [colors, setColors] = useState(COLORS);
 
-    const transitions = useTransition(colors, {
-        from: { opacity: 0 },
-        enter: { opacity: 1 },
-        leave: { opacity: 0 },
-        config: { duration: 1000 },
-    });
-
     const transitionColor = useTransition(colors, {
         from: { opacity: 0, transform: 'perspective(600px) rotateX(180deg)' },
         enter: { opacity: 1, transform: 'perspective(600px) rotateX(0deg)' },
@@ -33,17 +26,6 @@ const UseTransition = () => {
 
     return (
         <main className="reduceForm" >
-            <div>
-                {transitions((styless, item) => (
-                    <animated.div key={item.id} style={{
-                        ...styless,
-                        fontSize: '50px',
-                        color: item.code,
-                    }}>
-                        {item.color}
-                    </animated.div>
-                ))}
-            </div>
 
             <div
                 className="color"

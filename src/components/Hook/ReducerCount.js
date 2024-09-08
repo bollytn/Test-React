@@ -18,6 +18,8 @@ export default function ReducerCount() {
         const center = tempBtn.left;
         const bottom = tempBtn.bottom;
         setLocation({ center, bottom });
+        console.log(location);
+        
 
         switch (action.type) {
             case "up": {
