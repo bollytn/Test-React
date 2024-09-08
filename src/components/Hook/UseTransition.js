@@ -33,13 +33,25 @@ const UseTransition = () => {
 
     return (
         <main className="reduceForm" >
+            <div>
+                {transitions((styless, item) => (
+                    <animated.div key={item.id} style={{
+                        ...styless,
+                        fontSize: '50px',
+                        color: item.code,
+                    }}>
+                        {item.color}
+                    </animated.div>
+                ))}
+            </div>
+
             <div
                 className="color"
                 style={{ minHeight: '50px', width: '100px' }}
                 onMouseLeave={handleMouseLeave}
                 onMouseEnter={handleMouseEnter}>
-                {transitionColor((styles, item, index) => (
-                    <animated.div key={index} style={{
+                {transitionColor((styles, item) => (
+                    <animated.div key={item.id} style={{
                         ...styles,
                         fontSize: '50px',
                         color: item.code,
