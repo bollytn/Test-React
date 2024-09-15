@@ -94,3 +94,13 @@
   top: 5%;
   text-align: center;
 }
+
+.title .hide {
+  animation: slideaway 300ms;
+  display: none;
+}
+@keyframes slideaway {
+  from { display: block; }
+  to { transform: translateY(-50px); opacity: 0;}
+}
+

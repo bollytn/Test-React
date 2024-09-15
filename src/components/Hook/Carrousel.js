@@ -18,7 +18,7 @@ const Carrousel = () => {
         from: { opacity: 0, transform: 'translateY(-50px)' },
         enter: { opacity: 1, transform: 'translateY(0px)' },
         leave: { opacity: 0, transform: 'translateY(-50px)' },
-        config: { duration: 800 },
+        config: { duration: 500 },
     })
 
     useEffect(() => {
@@ -32,7 +32,6 @@ const Carrousel = () => {
     const transition = useTransition(list[activeIndex], {
         from: { opacity: 0, display: 'none' },
         enter: { opacity: 1, display: 'block' },
-        leave: { opacity: 0, display: 'none' }
     })
     const nextSlide = () => {
         setActiveIndex((activeIndex + 1) % list.length)
@@ -46,8 +45,8 @@ const Carrousel = () => {
             <div className="title">
                 {
                     title((styles, item, index) => (
-                        <animated.div key={index} style={styles}>
-                            {showHeading && <h1>{item}</h1>}
+                        <animated.div key={index} style={styles} className={`${showHeading ? '' : 'hide' }`}>
+                            {<h1>{item}</h1>}
                         </animated.div>
                     ))
                 }
