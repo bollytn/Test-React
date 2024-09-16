@@ -96,7 +96,7 @@
 }
 
 .title .hide {
-  animation: slideaway 300ms;
+  animation: slideaway 500ms;
   display: none;
 }
 @keyframes slideaway {

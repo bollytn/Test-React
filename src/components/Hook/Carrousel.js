@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { animated, useTransition } from "@react-spring/web";
 
 
-const slides = ['slide1', 'slide2', 'slides3']
 const DATA = ['heading', 'subheading']
 const list = [{ id: 0, color: 'orange' }, { id: 1, color: 'pink' }, { id: 2, color: 'green' }]
 
