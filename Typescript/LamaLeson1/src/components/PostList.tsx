@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PostCard from "./PostCard";
 
 const PostList = () => {
-    const [posts, setPosts] = React.useState([]);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
