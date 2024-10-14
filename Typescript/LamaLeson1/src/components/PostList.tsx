@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PostCard from "./PostCard";
 
 const PostList = () => {
+
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -19,7 +20,7 @@ const PostList = () => {
     return (
         <div className="postList">
             {posts.map((post: { id: number; title: string; body: string }) => (
-                <PostCard key={post.id} title={post.title} body={post.body} />
+                <PostCard key={post.id} {...post} />
             ))}
         </div>
     );
