@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import PostCard from "./PostCard";
+import { PostProps } from "../types/types";
 
 const PostList = () => {
 
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState<PostProps[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -11,7 +12,7 @@ const PostList = () => {
             if (!res.ok) {
                 throw new Error(`HTTP error! status: ${res.status}`);
             }
-            const data = await res.json();
+            const data: PostProps[] = await res.json();
             setPosts(data);
         };
         fetchData();
@@ -19,7 +20,7 @@ const PostList = () => {
 
     return (
         <div className="postList">
-            {posts.map((post: { id: number; title: string; body: string }) => (
+            {posts.map((post) => (
                 <PostCard key={post.id} {...post} />
             ))}
         </div>

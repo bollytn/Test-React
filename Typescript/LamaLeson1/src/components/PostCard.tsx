@@ -1,9 +1,6 @@
-type Props = {
-    title: string,
-    body: string
-}
+import { PostProps } from "../types/types";
 
-export default function PostCard(props: Props) {
+export default function PostCard(props: PostProps) {
     return (
         <div className="postCard">
             <h2>{props.title}</h2>
