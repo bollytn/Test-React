@@ -1,10 +1,10 @@
 import { Todo } from "../types/todos"
 
 interface TodoItemProps {
-    todo: Todo;
-    onCompleteChange: (id: number, completed: boolean) => void;
+    todo: Todo
+    onCompleteChange: (id: number, completed: boolean) => void
 }
-export default function TodoItem({ todo,onCompleteChange }: TodoItemProps) {
+export default function TodoItem({ todo, onCompleteChange }: TodoItemProps) {
     return (
         <div>
             <label className="flex items-center gap-2 border rounded-md p-2 border-gray-400 bg-white hover:bg-slate-50">
