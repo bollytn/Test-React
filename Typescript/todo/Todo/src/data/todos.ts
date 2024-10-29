@@ -7,7 +7,7 @@ export const dummyData: Todo[] = [
         completed: false
     },
     {
-        id: 2,f
+        id: 2,
         title: "Learn Typescript",
         completed: true
     },
